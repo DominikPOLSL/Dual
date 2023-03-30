@@ -62,7 +62,7 @@ int main()
                 if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Space && !(g1.czy_koniec() || g2.czy_koniec()) && p1.size() < 3)
                     p1.emplace_back(g1.pozycja().x, g1.pozycja().y, 1);
 
-                if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && !(g1.czy_koniec() || g2.czy_koniec()) && p2.size() < 3)
+                if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Enter && !(g1.czy_koniec() || g2.czy_koniec()) && p2.size() < 3)
                     p2.emplace_back(g2.pozycja().x, g2.pozycja().y, 2);
             }
 
